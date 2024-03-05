@@ -1,0 +1,1392 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>paw-pall documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">paw-pall documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CaretakersListComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/caretaker/caretakers-list/caretakers-list.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-caretakers-list</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./caretakers-list.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./caretakers-list.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allCaretakers" >allCaretakers</a>
+                            </li>
+                            <li>
+                                <a href="#caretakers" >caretakers</a>
+                            </li>
+                            <li>
+                                <a href="#CatFilter" >CatFilter</a>
+                            </li>
+                            <li>
+                                <a href="#City" >City</a>
+                            </li>
+                            <li>
+                                <a href="#DaycareFilter" >DaycareFilter</a>
+                            </li>
+                            <li>
+                                <a href="#DogFilter" >DogFilter</a>
+                            </li>
+                            <li>
+                                <a href="#DogWalkFilter" >DogWalkFilter</a>
+                            </li>
+                            <li>
+                                <a href="#immediateAvailabilityFilter" >immediateAvailabilityFilter</a>
+                            </li>
+                            <li>
+                                <a href="#OtherFilter" >OtherFilter</a>
+                            </li>
+                            <li>
+                                <a href="#QuickFeedingFilter" >QuickFeedingFilter</a>
+                            </li>
+                            <li>
+                                <a href="#SearchCity" >SearchCity</a>
+                            </li>
+                            <li>
+                                <a href="#selectedMultiplePets" >selectedMultiplePets</a>
+                            </li>
+                            <li>
+                                <a href="#sliderValue" >sliderValue</a>
+                            </li>
+                            <li>
+                                <a href="#SortbyParam" >SortbyParam</a>
+                            </li>
+                            <li>
+                                <a href="#SortDirection" >SortDirection</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onCityFilter" >onCityFilter</a>
+                            </li>
+                            <li>
+                                <a href="#onCityFilterClear" >onCityFilterClear</a>
+                            </li>
+                            <li>
+                                <a href="#onFilter" >onFilter</a>
+                            </li>
+                            <li>
+                                <a href="#onSortDirection" >onSortDirection</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(caretakerService: <a href="../injectables/CaretakerService.html" target="_self">CaretakerService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>caretakerService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CaretakerService.html" target="_self" >CaretakerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="31"
+                                    class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCityFilter"></a>
+                    <span class="name">
+                        <span ><b>onCityFilter</b></span>
+                        <a href="#onCityFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCityFilter()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="38"
+                                    class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCityFilterClear"></a>
+                    <span class="name">
+                        <span ><b>onCityFilterClear</b></span>
+                        <a href="#onCityFilterClear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCityFilterClear()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="59"
+                                    class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFilter"></a>
+                    <span class="name">
+                        <span ><b>onFilter</b></span>
+                        <a href="#onFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFilter()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="43"
+                                    class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSortDirection"></a>
+                    <span class="name">
+                        <span ><b>onSortDirection</b></span>
+                        <a href="#onSortDirection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSortDirection()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allCaretakers"></a>
+                    <span class="name">
+                        <span ><b>allCaretakers</b></span>
+                        <a href="#allCaretakers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ICaretakerBase.html" target="_self" >Array&lt;ICaretakerBase&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="caretakers"></a>
+                    <span class="name">
+                        <span ><b>caretakers</b></span>
+                        <a href="#caretakers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ICaretakerBase.html" target="_self" >Array&lt;ICaretakerBase&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="CatFilter"></a>
+                    <span class="name">
+                        <span ><b>CatFilter</b></span>
+                        <a href="#CatFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="City"></a>
+                    <span class="name">
+                        <span ><b>City</b></span>
+                        <a href="#City"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DaycareFilter"></a>
+                    <span class="name">
+                        <span ><b>DaycareFilter</b></span>
+                        <a href="#DaycareFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DogFilter"></a>
+                    <span class="name">
+                        <span ><b>DogFilter</b></span>
+                        <a href="#DogFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DogWalkFilter"></a>
+                    <span class="name">
+                        <span ><b>DogWalkFilter</b></span>
+                        <a href="#DogWalkFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="immediateAvailabilityFilter"></a>
+                    <span class="name">
+                        <span ><b>immediateAvailabilityFilter</b></span>
+                        <a href="#immediateAvailabilityFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OtherFilter"></a>
+                    <span class="name">
+                        <span ><b>OtherFilter</b></span>
+                        <a href="#OtherFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="QuickFeedingFilter"></a>
+                    <span class="name">
+                        <span ><b>QuickFeedingFilter</b></span>
+                        <a href="#QuickFeedingFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SearchCity"></a>
+                    <span class="name">
+                        <span ><b>SearchCity</b></span>
+                        <a href="#SearchCity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedMultiplePets"></a>
+                    <span class="name">
+                        <span ><b>selectedMultiplePets</b></span>
+                        <a href="#selectedMultiplePets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>boolean | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sliderValue"></a>
+                    <span class="name">
+                        <span ><b>sliderValue</b></span>
+                        <a href="#sliderValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SortbyParam"></a>
+                    <span class="name">
+                        <span ><b>SortbyParam</b></span>
+                        <a href="#SortbyParam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SortDirection"></a>
+                    <span class="name">
+                        <span ><b>SortDirection</b></span>
+                        <a href="#SortDirection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;asc&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/caretaker/caretakers-list/caretakers-list.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ICaretakerBase } from &#x27;src/app/model/icaretakerbase&#x27;;
+import { CaretakerService } from &#x27;src/app/services/caretaker.service&#x27;;
+
+@Component({
+  selector: &#x27;app-caretakers-list&#x27;,
+  templateUrl: &#x27;./caretakers-list.component.html&#x27;,
+  styleUrls: [&#x27;./caretakers-list.component.css&#x27;],
+})
+export class CaretakersListComponent implements OnInit {
+  allCaretakers!: Array&lt;ICaretakerBase&gt;; 
+  caretakers!: Array&lt;ICaretakerBase&gt;;
+  City &#x3D; &#x27;&#x27;;
+  SearchCity &#x3D; &#x27;&#x27;;
+  SortbyParam &#x3D; &#x27;&#x27;;
+  SortDirection &#x3D; &#x27;asc&#x27;;
+  // maxPrice &#x3D; 400;
+
+  DogFilter &#x3D; false;
+  CatFilter &#x3D; false;
+  OtherFilter &#x3D; false;
+  DogWalkFilter &#x3D; false;
+  QuickFeedingFilter &#x3D; false;
+  DaycareFilter &#x3D; false;
+  selectedMultiplePets: boolean | null &#x3D; null;
+  immediateAvailabilityFilter &#x3D; false;
+
+
+  constructor(private caretakerService: CaretakerService) {}
+
+  ngOnInit(): void {
+    this.caretakerService.getAllCaretakers().subscribe((data) &#x3D;&gt; {
+      this.allCaretakers &#x3D; data;
+      this.caretakers &#x3D; [...this.allCaretakers]; 
+    });
+  }
+
+  onCityFilter() {
+    this.SearchCity &#x3D; this.City;
+    this.onFilter();
+  }
+
+  onFilter() {
+    this.caretakers &#x3D; this.allCaretakers.filter((caretaker) &#x3D;&gt; {
+      return (
+        (this.SearchCity &#x3D;&#x3D;&#x3D; &#x27;&#x27; || caretaker.city.toLocaleLowerCase() &#x3D;&#x3D;&#x3D; this.SearchCity.toLocaleLowerCase()) &amp;&amp;
+        (!this.DogFilter || caretaker.dogCatOther.dog) &amp;&amp;
+        (!this.CatFilter || caretaker.dogCatOther.cat) &amp;&amp;
+        (!this.OtherFilter || caretaker.dogCatOther.other) &amp;&amp;
+        (!this.DogWalkFilter || caretaker.offer.dogWalk) &amp;&amp;
+        (!this.QuickFeedingFilter || caretaker.offer.quickFeeding) &amp;&amp;
+        (!this.DaycareFilter || caretaker.offer.daycare) &amp;&amp;
+        (!this.selectedMultiplePets || caretaker.moreThanOne &#x3D;&#x3D;&#x3D; this.selectedMultiplePets) &amp;&amp;
+        (!this.immediateAvailabilityFilter || caretaker.immediateAvailability) 
+      );
+    });
+  }
+
+  onCityFilterClear() {
+    this.SearchCity &#x3D; &#x27;&#x27;;
+    this.City &#x3D; &#x27;&#x27;;
+    this.DogFilter &#x3D; false;
+    this.CatFilter &#x3D; false;
+    this.OtherFilter &#x3D; false;
+    this.DogWalkFilter &#x3D; false;
+    this.QuickFeedingFilter &#x3D; false;
+    this.DaycareFilter &#x3D; false;
+    this.caretakers &#x3D; [...this.allCaretakers];
+  }
+
+  onSortDirection() {
+    if (this.SortbyParam !&#x3D;&#x3D; &#x27;&#x27;) {
+      this.caretakers.sort((a, b) &#x3D;&gt; {
+        const aValue &#x3D; a[this.SortbyParam];
+        const bValue &#x3D; b[this.SortbyParam];
+  
+        if (this.SortDirection &#x3D;&#x3D;&#x3D; &#x27;asc&#x27;) {
+          return aValue &lt; bValue ? -1 : aValue &gt; bValue ? 1 : 0;
+        } else {
+          return bValue &lt; aValue ? -1 : bValue &gt; aValue ? 1 : 0;
+        }
+      });
+    }
+  }
+  sliderValue &#x3D; 0;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-3 searchBox row justify-content-center&quot;&gt;
+      &lt;label class&#x3D;&quot;title-labels &quot;&gt;
+        &lt;img class&#x3D;&quot;icon&quot; src&#x3D;&quot;/assets/icon/map-pin.svg&quot; /&gt; Filtruj miasto:
+      &lt;/label&gt;
+      &lt;div class&#x3D;&quot; col-md-9 form-group &quot;&gt;
+        &lt;input class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;City&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div&gt; 
+        &lt;label class&#x3D;&quot;title-labels&quot;&gt; Zwierzątko: &lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;mat-checkbox [(ngModel)]&#x3D;&quot;CatFilter&quot;&gt;&lt;span class&#x3D;&quot;checkbox-option&quot;&gt;Kot&lt;/span&gt;&lt;/mat-checkbox&gt;
+        &lt;mat-checkbox [(ngModel)]&#x3D;&quot;DogFilter&quot;&gt;&lt;span class&#x3D;&quot;checkbox-option&quot;&gt;Pies&lt;/span&gt;&lt;/mat-checkbox&gt;
+        &lt;mat-checkbox [(ngModel)]&#x3D;&quot;OtherFilter&quot;&gt;&lt;span class&#x3D;&quot;checkbox-option&quot;&gt;Inne&lt;/span&gt;&lt;/mat-checkbox&gt;
+      &lt;/div&gt;
+      &lt;div&gt; 
+        &lt;label class&#x3D;&quot;title-labels&quot;&gt; Więcej niż jedno zwierzątko: &lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;mat-radio-group [(ngModel)]&#x3D;&quot;selectedMultiplePets&quot;&gt;
+          &lt;mat-radio-button [value]&#x3D;&quot;true&quot;&gt;&lt;span class&#x3D;&quot;radio-option&quot;&gt;Tak&lt;/span&gt;&lt;/mat-radio-button&gt;
+          &lt;mat-radio-button [value]&#x3D;&quot;false&quot;&gt;&lt;span class&#x3D;&quot;radio-option&quot;&gt;Nie&lt;/span&gt;&lt;/mat-radio-button&gt;
+        &lt;/mat-radio-group&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;label class&#x3D;&quot;title-labels&quot;&gt; Rodzaj preferowanej usługi: &lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;div&gt;
+          &lt;mat-checkbox [(ngModel)]&#x3D;&quot;DogWalkFilter&quot;&gt;&lt;span class&#x3D;&quot;checkbox-option&quot;&gt;Wyprowadzanie psa&lt;/span&gt;&lt;/mat-checkbox&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;mat-checkbox [(ngModel)]&#x3D;&quot;QuickFeedingFilter&quot;&gt;&lt;span class&#x3D;&quot;checkbox-option&quot;&gt;Szybkie karmienie&lt;/span&gt;&lt;/mat-checkbox&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;mat-checkbox [(ngModel)]&#x3D;&quot;DaycareFilter&quot;&gt;&lt;span class&#x3D;&quot;checkbox-option&quot;&gt;Opieka kilkudniowa&lt;/span&gt;&lt;/mat-checkbox&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;label class&#x3D;&quot;title-labels&quot;&gt; Praca od zaraz: &lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;mat-checkbox [(ngModel)]&#x3D;&quot;immediateAvailabilityFilter&quot;&gt;&lt;span class&#x3D;&quot;checkbox-option&quot;&gt;Tylko osoby oznaczone &quot;Praca od zaraz&quot;&lt;/span&gt;&lt;/mat-checkbox&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;row justify-content-center&quot;&gt;
+        &lt;button class&#x3D;&quot;searchButton&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;onCityFilter()&quot;&gt;
+        Wyszukaj opiekuna
+      &lt;/button&gt;
+      &lt;button class&#x3D;&quot;clearButton&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;onCityFilterClear()&quot;&gt;
+        Wyczyść
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-7&quot;&gt;
+        &lt;h1&gt;Dostępni opiekunowie&lt;/h1&gt;
+        &lt;div class&#x3D;&quot;sortButton&quot;&gt;
+          &lt;mat-form-field style&#x3D;&quot;margin-right: 10px;&quot;&gt;
+            &lt;mat-label&gt;Sortuj wg:&lt;/mat-label&gt;
+            &lt;mat-select  [(ngModel)]&#x3D;&quot;SortbyParam&quot;&gt;
+              &lt;mat-option value&#x3D;&quot;city&quot;&gt;Miasto&lt;/mat-option&gt;
+              &lt;mat-option value&#x3D;&quot;price&quot;&gt;Cena&lt;/mat-option&gt;
+            &lt;/mat-select&gt;
+          &lt;/mat-form-field&gt;
+        
+          &lt;mat-form-field *ngIf&#x3D;&quot;SortbyParam &#x3D;&#x3D;&#x3D; &#x27;city&#x27; || SortbyParam &#x3D;&#x3D;&#x3D; &#x27;price&#x27;&quot;&gt;
+            &lt;mat-label&gt;Kierunek sortowania&lt;/mat-label&gt;
+            &lt;mat-select [(ngModel)]&#x3D;&quot;SortDirection&quot;&gt;
+              &lt;mat-option *ngIf&#x3D;&quot;SortbyParam &#x3D;&#x3D;&#x3D; &#x27;city&#x27;&quot; value&#x3D;&quot;asc&quot;&gt;A-Z&lt;/mat-option&gt;
+              &lt;mat-option *ngIf&#x3D;&quot;SortbyParam &#x3D;&#x3D;&#x3D; &#x27;city&#x27;&quot; value&#x3D;&quot;desc&quot;&gt;Z-A&lt;/mat-option&gt;
+              
+              &lt;mat-option *ngIf&#x3D;&quot;SortbyParam &#x3D;&#x3D;&#x3D; &#x27;price&#x27;&quot; value&#x3D;&quot;asc&quot;&gt;Rosnąco&lt;/mat-option&gt;
+              &lt;mat-option *ngIf&#x3D;&quot;SortbyParam &#x3D;&#x3D;&#x3D; &#x27;price&#x27;&quot; value&#x3D;&quot;desc&quot;&gt;Malejąco&lt;/mat-option&gt;
+            &lt;/mat-select&gt;
+          &lt;/mat-form-field&gt;
+        &lt;/div&gt;
+        
+        &lt;div
+          *ngFor&#x3D;&quot;
+            let caretaker of caretakers | sort : [SortbyParam, SortDirection]
+          &quot;
+        &gt;
+          &lt;div class&#x3D;&quot;p-3 mb-4&quot;&gt;
+            &lt;app-caretaker-card [caretaker]&#x3D;&quot;caretaker&quot;&gt;&lt;/app-caretaker-card&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./caretakers-list.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.searchBox {
+  height: 700px; 
+  border-radius: 7.5px; 
+  border: 1.5px dashed rgba(0, 0, 0, 0.337);
+  background: #fff;
+  margin-right: 5%; 
+  margin-top: 2%; 
+  margin-left: 7%;
+  padding-top: 2.5%;
+}
+.icon{
+  width: 20px;
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-bottom: 2%;
+}
+.form-control {
+  border: none;
+  border-bottom: 1.5px solid #000;
+  outline: none;
+  color: #262626;
+  border-radius: 0%;
+width: 100%;  
+}
+
+.slidecontainer {
+  text-align: center;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 67.5%; 
+  height: 11.25px; 
+  margin: 1.5%;
+  border-radius: 3.75px; 
+  background: #ecd0d5;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 18.75px; 
+  height: 18.75px; 
+  border-radius: 50%;
+  background: #a6535a;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 18.75px; 
+  height: 18.75px;
+  border-radius: 50%;
+  background: #a6535a;
+  cursor: pointer;
+}
+
+h1 {
+  margin-top: 3.75%; 
+  margin-bottom: 3.75%; 
+  color: #262626;
+  font-family: Jost;
+  font-size: 24px; 
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 1.5%; 
+}
+
+#range-value {
+  font-size: 13.5px; 
+}
+
+.searchButton,
+.clearButton {
+  width: 310px; 
+  height: 30px; 
+  border-radius: 5px;
+background: #E79DAC;
+box-shadow: 0px 2px 4px 0px #A6535A;
+  color: #fff;
+  margin-top: 5px; 
+  text-align: center;
+  font-family: Jost;
+  font-size: 15px;
+  margin-bottom: 3%;
+  border: transparent;
+  
+}
+.searchButton:hover
+ {
+  background: #D17B99; 
+  box-shadow: 0px 4px 6px 0px #8F4850; 
+}
+
+.clearButton:hover {
+  color: #fff;
+  background-color:#b3a6ad;
+  box-shadow: 0px 1.5px 3px 0px #8d93a0;
+}
+
+.clearButton {
+  background: #f7eeef;
+  box-shadow: 0px 1.5px 3px 0px #a6535a;
+  color: #8d93a0;
+}
+
+.title-labels {
+  color: #262626;
+  margin-top: 7.5px; 
+  font-size: 13px;
+  font-weight: 400;
+
+}
+.checkbox-option, .radio-option{
+  font-size: 12px;
+  font-weight: 300;
+}
+.sortButton {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 1.5%; 
+}
+@media (max-width: 1200px) {
+  .searchBox {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+margin-left: 2%;
+  }
+
+  .form-control, .slider, #range-value, .searchButton, .clearButton, .title-labels, .col-md-7 {
+    width: 100%;
+    margin-bottom: 10px; 
+  }
+  h1{
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <div class="row">    <div class="col-md-3 searchBox row justify-content-center">      <label class="title-labels ">        <img class="icon" src="/assets/icon/map-pin.svg" /> Filtruj miasto:      </label>      <div class=" col-md-9 form-group ">        <input class="form-control" [(ngModel)]="City" />      </div>      <div>         <label class="title-labels"> Zwierzątko: </label>      </div>      <div>        <mat-checkbox [(ngModel)]="CatFilter"><span class="checkbox-option">Kot</span></mat-checkbox>        <mat-checkbox [(ngModel)]="DogFilter"><span class="checkbox-option">Pies</span></mat-checkbox>        <mat-checkbox [(ngModel)]="OtherFilter"><span class="checkbox-option">Inne</span></mat-checkbox>      </div>      <div>         <label class="title-labels"> Więcej niż jedno zwierzątko: </label>      </div>      <div>        <mat-radio-group [(ngModel)]="selectedMultiplePets">          <mat-radio-button [value]="true"><span class="radio-option">Tak</span></mat-radio-button>          <mat-radio-button [value]="false"><span class="radio-option">Nie</span></mat-radio-button>        </mat-radio-group>      </div>      <div>        <label class="title-labels"> Rodzaj preferowanej usługi: </label>      </div>      <div>        <div>          <mat-checkbox [(ngModel)]="DogWalkFilter"><span class="checkbox-option">Wyprowadzanie psa</span></mat-checkbox>        </div>        <div>          <mat-checkbox [(ngModel)]="QuickFeedingFilter"><span class="checkbox-option">Szybkie karmienie</span></mat-checkbox>        </div>        <div>          <mat-checkbox [(ngModel)]="DaycareFilter"><span class="checkbox-option">Opieka kilkudniowa</span></mat-checkbox>        </div>      </div>      <div>        <label class="title-labels"> Praca od zaraz: </label>      </div>      <div>        <mat-checkbox [(ngModel)]="immediateAvailabilityFilter"><span class="checkbox-option">Tylko osoby oznaczone "Praca od zaraz"</span></mat-checkbox>      </div>      <div class="row justify-content-center">        <button class="searchButton" type="button" (click)="onCityFilter()">        Wyszukaj opiekuna      </button>      <button class="clearButton" type="button" (click)="onCityFilterClear()">        Wyczyść      </button>    </div>  </div>    <div class="col-md-7">        <h1>Dostępni opiekunowie</h1>        <div class="sortButton">          <mat-form-field style="margin-right: 10px;">            <mat-label>Sortuj wg:</mat-label>            <mat-select  [(ngModel)]="SortbyParam">              <mat-option value="city">Miasto</mat-option>              <mat-option value="price">Cena</mat-option>            </mat-select>          </mat-form-field>                  <mat-form-field *ngIf="SortbyParam === \'city\' || SortbyParam === \'price\'">            <mat-label>Kierunek sortowania</mat-label>            <mat-select [(ngModel)]="SortDirection">              <mat-option *ngIf="SortbyParam === \'city\'" value="asc">A-Z</mat-option>              <mat-option *ngIf="SortbyParam === \'city\'" value="desc">Z-A</mat-option>                            <mat-option *ngIf="SortbyParam === \'price\'" value="asc">Rosnąco</mat-option>              <mat-option *ngIf="SortbyParam === \'price\'" value="desc">Malejąco</mat-option>            </mat-select>          </mat-form-field>        </div>                <div          *ngFor="            let caretaker of caretakers | sort : [SortbyParam, SortDirection]          "        >          <div class="p-3 mb-4">            <app-caretaker-card [caretaker]="caretaker"></app-caretaker-card>          </div>        </div>      </div>    </div>  </div></div>'
+    var COMPONENTS = [{'name': 'AddCaretakerComponent', 'selector': 'app-add-caretaker'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CaretakerCardComponent', 'selector': 'app-caretaker-card'},{'name': 'CaretakerDetailComponent', 'selector': 'app-caretaker-detail'},{'name': 'CaretakerPreviewComponent', 'selector': 'app-caretaker-preview'},{'name': 'CaretakersListComponent', 'selector': 'app-caretakers-list'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'UserConfirmComponent', 'selector': 'app-user-confirm'},{'name': 'UserLoginComponent', 'selector': 'app-user-login'},{'name': 'UserRegisterComponent', 'selector': 'app-user-register'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CaretakersListComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CaretakersListComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

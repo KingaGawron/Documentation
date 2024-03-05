@@ -1,0 +1,523 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>paw-pall documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">paw-pall documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CaretakerCardComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/caretaker/caretaker-card/caretaker-card.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-caretaker-card</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>caretaker-card.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>caretaker-card.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#caretaker" >caretaker</a>
+                            </li>
+                            <li>
+                                <a href="#hideIcon" >hideIcon</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="caretaker"></a>
+                        <b>caretaker</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ICaretakerBase.html" target="_self" >ICaretakerBase</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/caretaker/caretaker-card/caretaker-card.component.ts:11</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hideIcon"></a>
+                        <b>hideIcon</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/caretaker/caretaker-card/caretaker-card.component.ts:12</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &quot;@angular/core&quot;;
+import { ICaretakerBase } from &quot;src/app/model/icaretakerbase&quot;;
+
+
+@Component({
+    selector: &#x27;app-caretaker-card&#x27;,
+    templateUrl:&#x27;caretaker-card.component.html&#x27;,
+    styleUrls:[&#x27;caretaker-card.component.css&#x27;]
+})
+    export class CaretakerCardComponent{
+        @Input() caretaker!:ICaretakerBase;
+        @Input() hideIcon:boolean;
+
+    }
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;containerCard&quot;&gt;
+  &lt;div class&#x3D;&quot;card&quot;&gt;
+    &lt;div class&#x3D;&quot;d-flex flex-column flex-md-row&quot;&gt;
+      &lt;div class&#x3D;&quot;card-img-wrapper&quot;&gt;
+        &lt;img
+          *ngIf&#x3D;&quot;caretaker.photo&quot;
+          src&#x3D;&quot;{{caretaker.photo}}&quot;
+          alt&#x3D;&quot;&quot;
+          class&#x3D;&quot;card-img&quot;
+        /&gt;
+        &lt;img
+          *ngIf&#x3D;&quot;!caretaker.photo&quot;
+          src&#x3D;&quot;/assets/images/caretaker_default.jpg&quot;
+          alt&#x3D;&quot;&quot;
+          class&#x3D;&quot;card-img&quot;
+        /&gt;
+        &lt;ul *ngIf&#x3D;&quot;!hideIcon&quot; class&#x3D;&quot;list-inline text-center&quot;&gt;
+          &lt;li class&#x3D;&quot;list-inline-item&quot;&gt;
+            &lt;button
+              class&#x3D;&quot;btn btn-disabled&quot;
+              [routerLink]&#x3D;&quot;[&#x27;/detail-caretaker&#x27;, caretaker.postedBy]&quot;
+            &gt;Przejdź do profilu &gt;&lt;/button&gt;
+            &lt;h1 class&#x3D;&quot;mb-0&quot;&gt;&lt;span class&#x3D;&quot;price&quot;&gt;{{ caretaker.price }} zł za dobe&lt;/span&gt;&lt;/h1&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;h2&gt;{{ caretaker.name }}, {{caretaker.age}} lata&lt;/h2&gt;
+        &lt;h3&gt;{{ caretaker.city }}, {{caretaker.address}}&lt;/h3&gt;
+        &lt;p&gt;{{ caretaker.description }}&lt;/p&gt;
+        &lt;div *ngIf&#x3D;&quot;caretaker.dogCatOther&quot;&gt;
+          &lt;p class&#x3D;&quot;tagi&quot; *ngIf&#x3D;&quot;caretaker.dogCatOther.cat&quot;&gt;Koty&lt;/p&gt;
+          &lt;p class&#x3D;&quot;tagi&quot; *ngIf&#x3D;&quot;caretaker.dogCatOther.dog&quot;&gt;Psy&lt;/p&gt;
+          &lt;p class&#x3D;&quot;tagi&quot; *ngIf&#x3D;&quot;caretaker.dogCatOther.other&quot;&gt;Inne zwierzaki&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;caretaker.offer&quot;&gt;
+          &lt;p class&#x3D;&quot;tagi&quot; *ngIf&#x3D;&quot;caretaker.offer.dogWalk&quot;&gt;Spacery&lt;/p&gt;
+          &lt;p class&#x3D;&quot;tagi&quot; *ngIf&#x3D;&quot;caretaker.offer.quickFeeding&quot;&gt;Karmienie&lt;/p&gt;
+          &lt;p class&#x3D;&quot;tagi&quot; *ngIf&#x3D;&quot;caretaker.offer.daycare&quot;&gt;Wizyta w domu&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>caretaker-card.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.card {
+  min-height: 37.5px; 
+  padding: 15px; 
+  background-color:#fefefe 
+}
+/* .card:hover{
+  background-color:#F6F6F6 
+
+} */
+
+.card-img {
+  transform: scale(0.75, 0.75); 
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  height: 200px; 
+  width: 200px; 
+}
+
+.price {
+  color: #6453a6;
+  font-size: 13.5px; 
+  font-weight: 700;
+}
+h2 {
+  color: #455a64;
+  font-size: 15px; 
+  font-weight: 700;
+  margin-bottom: 0%;
+}
+
+h3 {
+  color: #858ea0;
+  font-family: Jost;
+  font-size: 12px; 
+  font-weight: 400;
+}
+
+p {
+  color: #262626;
+  font-family: Jost;
+  font-size: 12px;
+  font-weight: 300;
+}
+.btn{
+  font-size: 12px;
+  border-radius: 5px; 
+  border: 1.5px dashed #6453a6;
+}
+.btn:hover{
+  background-color: #6453a6;
+  color: #fff;
+}
+.tagi {
+  border-radius: 30px; 
+  border: 0.75px solid #a6535a; 
+  background: #fff;
+  display: inline-flex;
+  padding: 7.5px 18px; 
+  color: #a6535a;
+  font-family: DM Sans;
+  font-size: 10.5px; 
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 3.75px; 
+}
+@media (max-width: 770px) {
+  .containerCard .card .card-img-wrapper {
+    margin: 0 auto; 
+    text-align: center; 
+  }
+}
+
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="containerCard">  <div class="card">    <div class="d-flex flex-column flex-md-row">      <div class="card-img-wrapper">        <img          *ngIf="caretaker.photo"          src="{{caretaker.photo}}"          alt=""          class="card-img"        />        <img          *ngIf="!caretaker.photo"          src="/assets/images/caretaker_default.jpg"          alt=""          class="card-img"        />        <ul *ngIf="!hideIcon" class="list-inline text-center">          <li class="list-inline-item">            <button              class="btn btn-disabled"              [routerLink]="[\'/detail-caretaker\', caretaker.postedBy]"            >Przejdź do profilu ></button>            <h1 class="mb-0"><span class="price">{{ caretaker.price }} zł za dobe</span></h1>          </li>        </ul>      </div>      <div class="card-body">        <h2>{{ caretaker.name }}, {{caretaker.age}} lata</h2>        <h3>{{ caretaker.city }}, {{caretaker.address}}</h3>        <p>{{ caretaker.description }}</p>        <div *ngIf="caretaker.dogCatOther">          <p class="tagi" *ngIf="caretaker.dogCatOther.cat">Koty</p>          <p class="tagi" *ngIf="caretaker.dogCatOther.dog">Psy</p>          <p class="tagi" *ngIf="caretaker.dogCatOther.other">Inne zwierzaki</p>        </div>        <div *ngIf="caretaker.offer">          <p class="tagi" *ngIf="caretaker.offer.dogWalk">Spacery</p>          <p class="tagi" *ngIf="caretaker.offer.quickFeeding">Karmienie</p>          <p class="tagi" *ngIf="caretaker.offer.daycare">Wizyta w domu</p>        </div>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddCaretakerComponent', 'selector': 'app-add-caretaker'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CaretakerCardComponent', 'selector': 'app-caretaker-card'},{'name': 'CaretakerDetailComponent', 'selector': 'app-caretaker-detail'},{'name': 'CaretakerPreviewComponent', 'selector': 'app-caretaker-preview'},{'name': 'CaretakersListComponent', 'selector': 'app-caretakers-list'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'UserConfirmComponent', 'selector': 'app-user-confirm'},{'name': 'UserLoginComponent', 'selector': 'app-user-login'},{'name': 'UserRegisterComponent', 'selector': 'app-user-register'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CaretakerCardComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CaretakerCardComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
